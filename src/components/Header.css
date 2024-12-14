@@ -1,0 +1,69 @@
+.header {
+    background: linear-gradient(135deg, #2c3e50, #4ca1af);
+    padding: 20px;
+    text-align: left;
+    color: #ffffff;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+  }
+  
+  .nav-links li {
+    margin: 0 15px;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: #ffffff;
+  }
+  
+  .nav-links a:hover {
+    text-decoration: underline;
+  }
+  
+  .hero-section {
+    text-align: center;
+    padding: 100px 20px;
+  }
+  
+  .tagline {
+    font-size: 36px;
+    font-weight: bold;
+  }
+  
+  .description {
+    margin: 20px 0;
+    font-size: 18px;
+    color: #dcdcdc;
+  }
+  
+  .cta-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    background: #61dafb;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .cta-btn:hover {
+    background: #4ca1af;
+    color: #fff;
+  }
+  li:hover {
+    cursor: pointer;
+  }

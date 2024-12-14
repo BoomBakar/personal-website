@@ -1,0 +1,37 @@
+.footer {
+    background-color: #111; /* Dark background for contrast */
+    color: #fff; /* White text */
+    padding: 20px 40px; /* Add padding for spacing */
+    text-align: center; /* Center the content */
+    font-size: 0.9rem; /* Slightly smaller font size */
+  }
+  
+  .footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Spacing between text and social links */
+  }
+  
+  .social-links {
+    display: flex;
+    gap: 20px; /* Space out the links */
+    margin-top: 10px;
+  }
+  
+  .social-links a {
+    color: #ccc; /* Muted link color */
+    text-decoration: none;
+    font-size: 1rem; /* Increase font size for readability */
+    transition: color 0.3s ease;
+  }
+  
+  .social-links a:hover {
+    color: #007bff; /* Add a nice hover effect */
+  }
+  
+  .footer p {
+    margin: 0; /* Remove extra margin from the paragraph */
+  }
+  
