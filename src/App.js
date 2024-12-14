@@ -17,6 +17,14 @@ function App() {
         >
           My LinkedIn Profile link
         </a>
+        <a
+          className="App-link"
+          href="https://www.instagram.com/abubakar_dar608/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          My Instgram ID
+        </a>
       </header>
     </div>
   );
