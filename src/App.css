@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   font-family: "Arial", sans-serif;
@@ -25,7 +29,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: 110vh;
   text-align: center;
   background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
   color: #fff;
@@ -48,7 +52,7 @@ header {
 }
 
 .experience-section {
-  min-height: 100vh;
+  min-height: 110vh;
   background-color: #202020;
   color: #fff;
   padding: 50px 20px;

@@ -5,7 +5,7 @@ function Header() {
   const scrollToSection = (id) => {
     const section = document.getElementById(id);
     if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
+      section.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };
 
@@ -16,6 +16,7 @@ function Header() {
         <ul className="nav-links">
           <li onClick={() => scrollToSection("about")}>About Me</li>
           <li onClick={() => scrollToSection("experience")}>Experience</li>
+          <li onClick={() => scrollToSection("contact")}>Contact</li>
         </ul>
       </nav>
     </header>
