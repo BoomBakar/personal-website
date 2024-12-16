@@ -7,7 +7,13 @@
     height: 50vh;
     text-align: left;
   }
-  
+  @media (max-width: 768px) {
+
+    .experience-content {
+      max-width: 90vw;
+      font-size: 1rem;
+    }
+  }
   
   
   .experience-content h2 {
