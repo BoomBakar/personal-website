@@ -1,38 +1,26 @@
-import React, { useEffect, useRef } from "react";
 import "./Experience.css";
 
 function Experience() {
-  const experienceRef = useRef(null);
-
-  // Add a scroll effect for the experience section
-  useEffect(() => {
-    const handleScroll = () => {
-      const section = experienceRef.current;
-      const top = section.getBoundingClientRect().top;
-
-      if (top < window.innerHeight - 100) {
-        section.classList.add("visible");
-      } else {
-        section.classList.remove("visible");
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   return (
-    <div ref={experienceRef} className="experience-content">
+    
+    <div className="experience-content">
+        
       <h2>Experience</h2>
       <ul>
         <li>
           <strong>Software Engineer, Xavor Corp.</strong> (Apr 2023 – Nov 2024)
-          <p>Developed and maintained enterprise-level applications using ASP.NET C#.</p>
+          <p>Developed and maintained enterprise-level applications using ASP.NET C#.
+          Collaborated with cross-functional teams to ensure adherence
+          to coding standards and alignment with project requirements. <br />
+          Optimized application performance through effective
+          debugging, refactoring, and implementation of best practices.
+          </p>
         </li>
         <li>
           <strong>Freelancing, Upwork</strong> (2021 – 2022)
-          <p>Proficient in full-stack web development using .NET and MERN stack.</p>
+          <p>Proficient in full-stack web development using .NET and MERN stack. <br />
+            Changing Tech stacks of many projects from one to another.
+          </p>
         </li>
       </ul>
     </div>

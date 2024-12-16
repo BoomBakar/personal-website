@@ -1,18 +1,19 @@
 .contact-section {
-    background: #f7f7f7;
+    background: transparent;
     padding: 80px 20px;
     text-align: center;
   }
   
   .contact-content h2 {
     font-size: 2.5rem;
-    color: #333;
+    color: white;
     margin-bottom: 20px;
+
   }
   
   .contact-content p {
     font-size: 1.2rem;
-    color: #555;
+    color: white;
     margin-bottom: 40px;
   }
   
@@ -56,4 +57,10 @@
   .form-button:hover {
     background-color: #0056b3;
   }
-  
+  .footerSec {
+    background-color: transparent;
+    color: red;
+    padding: 20px 40px;
+    text-align: center;
+    font-size: 0.9rem;
+  }

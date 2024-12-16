@@ -1,60 +1,78 @@
-import React, { useEffect } from "react";
-import "./App.css";
-import Header from "./components/Header";
+import React, { useState, useEffect, useRef } from "react";
+import Spline from '@splinetool/react-spline';
 import Experience from "./components/Experience";
 import Contact from "./components/Contact";
-import Footer from "./components/Footer";
+import Home from "./components/Home";
+import "./App.css";
+
+const sections = [
+  { id: "home", title: "Home", animation: "fade-in", content: "" },
+  { id: "about", title: "About Me", animation: "slide-in-left", content: <Home /> },
+  { id: "experience", title: "Experience", animation: "slide-in-right", content: <Experience /> },
+  { id: "contact", title: "Contact", animation: "fade-in", content: <Contact /> },
+];
 
 function App() {
-  // Add a fade-in/out effect on scroll
+  const [activeSection, setActiveSection] = useState(null);
+  const [fadeInClass, setFadeInClass] = useState("");  // State to trigger animation
+  const splineRef = useRef();
+
+  const showSection = (id) => {
+    setActiveSection(id);
+    setFadeInClass("");  // Reset fade-in class to re-trigger animation
+  };
+
+  // Example robot interaction
+  const handleRobotClick = () => {
+    if (splineRef.current) {
+      splineRef.current.emitEvent("mouseDown", "Robot");
+    }
+  };
+
   useEffect(() => {
-    const handleScroll = () => {
-      const aboutSection = document.getElementById("about");
-      const experienceSection = document.getElementById("experience");
-      const scrollY = window.scrollY;
-  
-      // Fade out the about section when scrolled
-      if (scrollY > window.innerHeight / 2) {
-        aboutSection.style.opacity = "0";
-        aboutSection.style.transform = "translateY(-50px)";
-        
-        // Fade in the experience section
-        experienceSection.style.opacity = "1";
-        experienceSection.style.transform = "translateY(0)";
-      } else {
-        aboutSection.style.opacity = "1";
-        aboutSection.style.transform = "translateY(0)";
-  
-        // Reset experience section visibility
-        experienceSection.style.opacity = "0";
-        experienceSection.style.transform = "translateY(50px)";
-      }
-    };
-  
-    window.addEventListener("scroll", handleScroll);
-  
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-  
+    if (activeSection) {
+      // Delay adding the 'active' class to allow the section to render first
+      setTimeout(() => setFadeInClass("active"), 50); // Slight delay to allow rendering
+    }
+  }, [activeSection]);  // Run the effect whenever the active section changes
 
   return (
-    <div className="App">
-      <Header />
-      <section id="about" className="about-section">
-        <div className="about-content">
-          <h1>Hi, I'm Abubakar Dar</h1>
-          <p>
-            A passionate developer with expertise in building scalable and
-            reliable web solutions. I specialize in ASP.NET (C#), full-stack
-            development, and modern web technologies.
-          </p>
-        </div>
-      </section>
-      <section id="experience" className="experience-section">
-        <Experience />
-      </section>
-      <Contact />
-      <Footer />  
+    <div className="app">
+      {/* Navigation */}
+      <nav className="nav">
+        {sections.map((section) => (
+          <a
+            key={section.id}
+            onClick={() => showSection(section.id)}
+            href="#"
+          >
+            {section.title}
+          </a>
+        ))}
+      </nav>
+
+      {/* Background Robot */}
+      <div className="spline-robot" onClick={handleRobotClick}>
+        <Spline
+          scene="https://prod.spline.design/BbSa6yQLT2Kh6GeT/scene.splinecode"
+          onLoad={(splineApp) => (splineRef.current = splineApp)}
+        />
+      </div>
+
+      {/* Sections */}
+      <div className="content">
+        {sections.map(
+          (section) =>
+            activeSection === section.id && (
+              <div
+                key={section.id}
+                className={`section ${section.animation} ${fadeInClass}`}
+              >
+                {section.content}
+              </div>
+            )
+        )}
+      </div>
     </div>
   );
 }
