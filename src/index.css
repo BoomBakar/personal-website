@@ -10,8 +10,7 @@ html, body {
 
 body {
   font-family: 'Arial', sans-serif;
-  background-color: #f0f0f0;
-  background: linear-gradient(135deg, #1e1e2f, #3f3f5a);
   
+  background: linear-gradient(135deg, #b7b7c6, #3f3f5a);
   
 }

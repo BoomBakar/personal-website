@@ -41,13 +41,12 @@ function App() {
       {/* Navigation */}
       <nav className="nav">
         {sections.map((section) => (
-          <a
+          <button
             key={section.id}
-            onClick={() => showSection(section.id)}
-          
+            onClick={() => showSection(section.id)} 
           >
             {section.title}
-          </a>
+          </button>
         ))}
       </nav>
 
