@@ -2,6 +2,7 @@
     background: transparent;
     padding: 80px 20px;
     text-align: center;
+    pointer-events: auto;
   }
   
   .contact-content h2 {
