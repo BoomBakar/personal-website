@@ -44,7 +44,7 @@ function App() {
           <a
             key={section.id}
             onClick={() => showSection(section.id)}
-            href="#"
+          
           >
             {section.title}
           </a>
