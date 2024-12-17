@@ -10,13 +10,12 @@ const Contact = () => {
 
     const sendEmail = (e) => {
       e.preventDefault();
-  
       emailjs
         .sendForm(
-          "service_yw37uhu", // Replace with your Service ID
-          "template_abma058", // Replace with your Template ID
+          process.env.REACT_APP_EMAILJS_SERVICE_ID, 
+          process.env.REACT_APP_EMAILJS_TEMPLATE_ID, 
           form.current,
-          "11Cw8eTRW6qkLCeNE" // Replace with your Public Key
+          process.env.REACT_APP_EMAILJS_PUBLIC_KEY
         )
         .then(
           (result) => {
@@ -24,7 +23,7 @@ const Contact = () => {
             alert("Message sent successfully!");
           },
           (error) => {
-            console.error("Error sending email:", error.text);
+            console.error("Error sending email:", error);
             alert("Failed to send the message. Please try again.");
           }
         );
